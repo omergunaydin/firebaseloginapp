@@ -5,6 +5,3 @@
 # Xcode-related
 **/dgph
 **/xcuserdata/
-
-# Firebase configuration files
-firebase_options.dart
