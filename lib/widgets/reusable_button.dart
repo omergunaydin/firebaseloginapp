@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class ReusableButton extends StatelessWidget {
   final Function()? onTap;
-  const ReusableButton({Key? key, required this.onTap}) : super(key: key);
+  final String text;
+
+  const ReusableButton({Key? key, required this.onTap, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +17,10 @@ class ReusableButton extends StatelessWidget {
           color: Colors.black,
           borderRadius: BorderRadius.circular(8),
         ),
-        child: const Center(
+        child: Center(
           child: Text(
-            "Sign In",
-            style: TextStyle(
+            text,
+            style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: 16,

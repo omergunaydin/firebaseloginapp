@@ -37,22 +37,22 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.of(context).pop();
       //wrong e-mail
       if (e.code == 'user-not-found') {
-        wrongMessage('Email');
+        errorMessage('Incorrect Email');
       }
       //wrong password
       else {
-        wrongMessage('Password');
+        errorMessage('Incorrect Password');
       }
     }
   }
 
-  void wrongMessage(String type) {
+  void errorMessage(String message) {
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
           title: const Text('Login Failed'),
-          content: Text('Incorrect $type'),
+          content: Text(message),
         );
       },
     );
@@ -99,6 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 25),
                 ReusableButton(
                   onTap: () => signIn(),
+                  text: 'Sign In',
                 ),
                 const SizedBox(height: 50),
                 Row(
